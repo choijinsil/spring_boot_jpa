@@ -2,6 +2,8 @@ package com.siris.api.service.Impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import com.siris.api.model.entity.BoardEntity;
@@ -39,6 +41,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	@Transactional
 	public Integer deleteByNo(Long no) {
 		return boardRepository.deleteByNo(no);
 	}

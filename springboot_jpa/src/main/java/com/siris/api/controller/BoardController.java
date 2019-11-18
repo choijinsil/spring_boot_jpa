@@ -40,6 +40,7 @@ public class BoardController {
 	
 	@GetMapping("/findByNo")
 	public BoardEntity findByNo(Long no) {
+		
 		return boardService.findByNo(no);
 	}
 	
