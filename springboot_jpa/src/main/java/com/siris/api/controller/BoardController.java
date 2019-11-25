@@ -19,6 +19,7 @@ import com.siris.api.service.BoardService;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/board")
@@ -55,6 +56,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/getAllBoardDSL")
+	@ApiOperation(value = "목록 조회 DSL")
 	@ApiImplicitParams({
 	    @ApiImplicitParam(name = "page", dataType = "integer", paramType = "query",
 	            value = "Results page you want to retrieve (0..N)"),
