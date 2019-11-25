@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.siris.api.model.bean.BoardBean;
 import com.siris.api.model.entity.BoardEntity;
 import com.siris.api.repository.BoardRepository;
 import com.siris.api.service.BoardService;
@@ -40,5 +42,13 @@ public class BoardServiceImpl implements BoardService {
 	@Transactional
 	public Integer deleteByNo(Long no) {
 		return boardRepository.deleteByNo(no);
+	}
+
+	@Override
+	public List<BoardBean> getAllBoardDSL(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return boardRepository
+				.getAllBoardDSL(pageable)
+				.getContent();
 	}
 }

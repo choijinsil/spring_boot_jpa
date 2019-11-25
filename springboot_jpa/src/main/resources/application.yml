@@ -4,6 +4,7 @@ server:
 spring:
   jpa:
     database: H2
+    show-sql: true
     hibernate:
       # create - 생성한것 계속 쓰기
       ddl-auto: create
