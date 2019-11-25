@@ -20,10 +20,6 @@ public class BoardServiceImpl implements BoardService {
 		this.boardRepository = boardRepository;
 	}
 
-	public void test() {
-	
-	}
-
 	@Override
 	public BoardEntity save(BoardEntity entity) {
 		return boardRepository.save(entity);

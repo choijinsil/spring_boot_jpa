@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>안뇽</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <style>
+        /*html{position:relative;min-height:100%;}*/
+        body {
+            margin-bottom: 60px;
+        }
+
+        body > .container {
+            padding: 60px 15px 0;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>게시글 목록</h1>
+    </div>
+    <div class="pull-right" style="width:100px;margin:10px 0;">
+        <a href="/board" class="btn btn-primary btn-block">등록</a>
+    </div>
+    <br/><br/><br/>
+
+    <from>
+        <div id="mainHide">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="col-md-1">no</th>
+                    <th class="col-md-2">title</th>
+                    <th class="col-md-5">content</th>
+                    <th class="col-md-2">writeDate</th>
+                    <th class="col-md-2">writer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="list : ${userList}">
+                    <td th:text="${list.no}">no</td>
+                    <td th:text="${list.title}">title</td>
+<!--                    <td><a th:href="'/board?idx='+${board.idx}" th:text="${board.title}"></a></td>-->
+                    <td th:text="${list.content}">content</td>
+                    <td th:text="${list.writeDate}">writeDate</td>
+                    <td th:text="${list.writer}">writer</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </from>
+</div>
+<br/>
+
+    </from>
+</body>
+</html>
